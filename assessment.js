@@ -7,32 +7,30 @@ Assessment Requirements
 3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
 4. For good measure, getTotalSupply() should return the number of NFT's you have created
 */
-
 // create a variable to hold your NFT's
 const NFTHolder = []
 // this function will take in some values as parameters, create an
 // NFT object using the parameters passed to it for its metadata, 
 // and store it in the variable above.
-function mintNFT (_pokeName, _spriteColor, _pokeType, _sigMove) {
+function mintNFT (_starName, _starColor, _starType, _starPos) {
     const NFT = {
-        "pokeName": _pokeName,
-        "spriteColor": _spriteColor,
-        "pokeType": _pokeType,
-        "sigMove": _sigMove
+        "starName": _starName,
+        "starColor": _starColor,
+        "starType": _starType,
+        "starPos": _starPos
     }
     NFTHolder.push(NFT);
-    console.log("Minted: "+ _pokeName);
+    console.log("Minted: "+ _starName);
 }
-
 // create a "loop" that will go through an "array" of NFT's
 // and print their metadata with console.log()
 function listNFTs () {
     for(let i = 0; i < NFTHolder.length; ++i){
         console.log();
-        console.log("Pokemon Name: \t\t" + NFTHolder[i].pokeName);
-        console.log("Sprite Color: \t\t" + NFTHolder[i].spriteColor);
-        console.log("Pokemon Type: \t\t" + NFTHolder[i].pokeType);
-        console.log("Signature Move: \t" + NFTHolder[i].sigMove);
+        console.log("Name: \t\t" + NFTHolder[i].starName);
+        console.log("Team Color: \t\t" + NFTHolder[i].starColor);
+        console.log("Type: \t\t" + NFTHolder[i].starType);
+        console.log("Position: \t" + NFTHolder[i].starPos);
     }
 }
 
@@ -40,11 +38,9 @@ function listNFTs () {
 function getTotalSupply() {
     console.log("\nTotal number NFTs held: "+NFTHolder.length);
 }
-
 // call your functions below this line
-
-mintNFT("Pikachu", "Yellow", "Electric", "Thunderbolt");
-mintNFT("Charmander", "Orange", "Fire", "Flamethrower");
-mintNFT("Squirtle", "BLue", "Water", "Water Gun");
+mintNFT("James", "Grey", "Player", "Center");
+mintNFT("Stephen", "Orange", "Benched", "PG");
+mintNFT("Antman", "Blue", "Extras", "Mid");
 listNFTs();
 getTotalSupply();
